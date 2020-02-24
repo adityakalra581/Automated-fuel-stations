@@ -1,20 +1,36 @@
-from flask import Flask, render_template,flash, redirect,url_for
+from datetime import datetime
+from flask import Flask, render_template, url_for, flash, redirect
+from flask_sqlalchemy import SQLAlchemy
 from forms import RegistrationForm, LoginForm
 
-app=Flask(__name__)
+app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+
+# Using this we will have an site.db file inside the same directory as this py file.
+db = SQLAlchemy(app)
+# This will create an instance
 
 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
+    password = db.Column(db.String(60), nullable=False)
+   
+
+    def __repr__(self):
+        return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+
+
+
+### Class User here will create an sql table present inside site.db
 
 @app.route('/')
 def home():
     return render_template('home.html',title='HOME')
-
-
-
-
-
 
 
 @app.route('/about')
@@ -41,13 +57,6 @@ def login():
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
