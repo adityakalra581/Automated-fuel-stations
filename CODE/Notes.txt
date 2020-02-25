@@ -1,0 +1,107 @@
+
+
+
+///////     25 Feb 2020  /////////
+********************************************************************************************************************
+#### For checking whether the user is added into in the database or not after Registration from website:
+
+In terminal:
+
+(my-project-env) devtron@Vostro:~$ cd Project/Automated-fuel-stations/CODE/
+(my-project-env) devtron@Vostro:~/Project/Automated-fuel-stations/CODE$ ls
+flask_blog  run.py
+(my-project-env) devtron@Vostro:~/Project/Automated-fuel-stations/CODE$ python
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from flask_blog import db
+/home/devtron/Project/my-project-env/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:835: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+>>> from flask_blog.models import User
+>>> user = User.query.first()
+>>> user
+User('aditya7', 'adityakalr56@yahoo.com', 'default.jpg')
+>>> user.password
+'$2b$12$3PuBetjrd5zaSdJIO3OEou5MzUpoCbfz0BQzDTiZE0B1RXxeC2KLq'
+>>> 
+**********************************************************************************************************************
+
+#### Username and email Validation:
+
+Important Libraries
+
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from flask_blog.models import User
+
+$$ present in forms.py
+
+## These methods are present for making a new registration with Unique username and Email.
+## Both the methods will check whether the email and username already Exists in the database or not.
+## IF true will raise an Validation error.
+
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user:
+            raise ValidationError('That username is taken. Please choose a different one.')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user:
+            raise ValidationError('That email is taken. Please choose a different one.')
+
+**********************************************************************************************************
+
+Structure of Directory tii now:
+
+Automated fuel stations:
+    CODE:
+        run.py
+        Notes.txt
+
+        flask_blog:
+            __init__
+            forms.py
+            models.py
+            routes.py
+            site.db
+        
+
+
+****************************************************************
+Now we will look into Log in:
+
+flask_login: 
+
+Flask-Login provides user session management for Flask. It handles the common tasks of logging in, logging out, and remembering your users’ sessions over extended periods of time.
+
+It will:
+
+    Store the active user’s ID in the session, and let you log them in and out easily.
+    Let you restrict views to logged-in (or logged-out) users.
+    Handle the normally-tricky “remember me” functionality.
+    Help protect your users’ sessions from being stolen by cookie thieves.
+    Possibly integrate with Flask-Principal or other authorization extensions later on.
+
+
+https://flask-login.readthedocs.io/en/latest/
+
+To make implementing a user class easier, you can inherit from UserMixin, 
+which provides default implementations for all of these properties and methods.
+(It’s not required, though.)
+
+********************************
+
+Once the user is logged in:
+
+- login tab will convert into logout
+
+- Register tab will convert into account 
+
+
+"/account" page created. 
+- if user is logged in: 
+    - Currently it include the username only.
+- if user is not logged in:
+    - this page will prompt the user to log in.
+    - Also this page has a message of "need to log in"
+
