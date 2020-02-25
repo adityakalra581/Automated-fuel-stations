@@ -6,6 +6,17 @@ from flask_blog.models import User
 from flask_login import login_user,current_user, logout_user, login_required
 
 
+## flask_blog is a directory inside which an __init__ file is present which will run every time whenever flask_blog is called
+## It is used in order to avoid the error of Circular import.
+
+## app,db,bcrypt all are instances created for initiating flask, SQL , Hashing the encrypted passwords respectively.
+
+## current_user: here it is used for identifying whether the user is logged in or not.
+
+
+
+
+
 @app.route('/')
 def home():
     return render_template('home.html',title='HOME')
@@ -16,14 +27,18 @@ def about():
 	return render_template('about.html',title='about')
 
 
+
+## methods essential for getting and posting of data.
+## adding functionality requires it.
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')              ## decode('utf-8') will convert it into encrypted string.
+        user = User(username=form.username.data, email=form.email.data, password=hashed_password)        ## adding password to variable will make sure it does not change every time
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
@@ -31,13 +46,22 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
+
+
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('home'))
+    
+    if current_user.is_authenticated:                        
+    ## is_authenticated:  
+    ## This property should return True if the user is authenticated,
+    ## i.e. they have provided valid credentials.
+    ## (Only authenticated users will fulfill the criteria of login_required.)
+    
+        return redirect(url_for('home'))                     
     form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
+    if form.validate_on_submit():                                              
+        user = User.query.filter_by(email=form.email.data).first()        ## SQL query : will provide the email of the 
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
