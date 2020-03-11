@@ -103,5 +103,5 @@ Once the user is logged in:
     - Currently it include the username only.
 - if user is not logged in:
     - this page will prompt the user to log in.
-    - Also this page has a message of "need to log in"
+    - Also this page has a message of "need to log in".
 
