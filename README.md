@@ -121,13 +121,18 @@ customer experience better.
 **Q. Why would anyone want to Register or Login?**
 
 - ANS: **Benefits** of Creating an Account:
-  
-  1. For Customers: 1.) Will receive real time data of how busy a particular fuel station is and how much time it will take to provide                           the service.[Hence solving problem number 1 of long lines]
-                    2.) Better service and customer experience as the service providers know there customer.
+ 
+- 1. For Customers: 
+
+- 1.) Will receive real time data of how busy a particular fuel station is and how much time it will take to provide                           the service.[Hence solving problem number 1 of long lines]
+
+- 2.) Better service and customer experience as the service providers know there customer.
  
 **NEED** 
 
-  2. For Client(Fuel stattion Owners) : 1.) For collection of data and customer verification it is mandatory.
+  - For Client(Fuel stattion Owners) :
+  
+  - 1.) For collection of data and customer verification it is mandatory.
   
   
 ## HARDWARE 
