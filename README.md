@@ -80,7 +80,7 @@ This is the home page of our web app.
 ![](images/block-webapp.png)
 
 
-**DATABASE and HARDWARE Communication
+**DATABASE and HARDWARE Communication**
 
 ![](images/d-hcomm.png)
 
