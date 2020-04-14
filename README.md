@@ -37,6 +37,18 @@ customer experience better.
 
 2. A Microprocessor based hardware decice
 
+
+## How This Works ?
+
+![](images/block-webapp.png)
+
+
+**DATABASE and HARDWARE Communication**
+
+![](images/d-hcomm.png)
+
+
+
 **Web-App**
 
 ![](images/home.png)
@@ -55,6 +67,7 @@ This is the home page of our web app.
 
 **Raspberry pi Hardware Device**
 
+
 ![](images/circuit.jpeg)
 
 
@@ -70,19 +83,39 @@ This is the home page of our web app.
 
 ![](images/anpr2.jpg)
 
+**Original Code Block Output**
+
+![](images/detected-text-new.png)
+
 **Block Diagram of Algorithm**
 
 ![](images/anpr-block.png)
 
+### TASKS Segregation
 
-## How This Works ?
+#### Tasks Completed:
 
-![](images/block-webapp.png)
+1. Website : Home,About,Login,Registration pages completed. Database is created, integration of database with website is done.
+             Authentication is also completed i.e no spam or fraudulent email will be accepted, passwords will be hased when sent to the              database.
+             
+2. Hardware : Setup is complete, Raspberry pi is running, camera is capturing image and live stream is recorded and displayed.
+
+3. Automatic Number Plate Recognition : Completed and tested. The algorithm is working with high accuracy.
+
+4. Time and Rush Estimation : Code is completed.
+
+#### Pending Tasks:
+
+1. Website : Profile page of user,Admin page for client and deployment of website.
+
+2. Time and Rush Estimation : Code deployment and Testing.
 
 
-**DATABASE and HARDWARE Communication**
 
-![](images/d-hcomm.png)
+
+
+
+
 
 
 
