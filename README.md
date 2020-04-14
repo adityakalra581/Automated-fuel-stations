@@ -38,9 +38,9 @@ customer experience better.
 
 2. A Microprocessor based hardware decice : This will perform two functions
     
-    1. Automatic Number Plate Recognition(ANPR) : 
+1.) Automatic Number Plate Recognition(ANPR) : 
     
-    2. Time and Rush Estimate 
+2.) Time and Rush Estimate 
     
 
 ## Automatic Number Plate Recognition:
@@ -130,9 +130,9 @@ customer experience better.
  
 **NEED** 
 
-  - For Client(Fuel stattion Owners) :
+- For Client(Fuel stattion Owners) :
   
-  - 1.) For collection of data and customer verification it is mandatory.
+- 1.) For collection of data and customer verification it is mandatory.
   
   
 ## HARDWARE 
