@@ -45,7 +45,7 @@ This is the home page of our web app.
 
 This here has a login and registrartion page.
 
-![](images/register-web.png)
+![](images/register-web.PNG)
 
 ![](images/login-web.png)
 
