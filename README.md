@@ -72,6 +72,12 @@ customer experience better.
 
 ## 1. How This Works ?
 
+**COMPLETE BLOCK DIAGRAM OF THE PROJECT**
+
+![](images/complete-block.png)
+
+### STEP 1:
+
 
 ![](images/block-webapp.png)
 
@@ -85,6 +91,9 @@ customer experience better.
 - Hardware : Raspberry pi + Camera + Ultrasonic Sensors  
 
 - The data collected by the hardware device will be fetched and fed to the website which then directly displayed on the profiles of the   users.
+
+
+### STEP 2:
 
 **DATABASE and HARDWARE Communication**
 
