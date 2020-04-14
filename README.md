@@ -4,8 +4,8 @@ Project Ideation
 
 ## Problem Statements
 
-- This project is tackling three major issues Indian vehicle owners and Fuel
-stations are suffering with:
+**This project is tackling three major issues Indian vehicle owners and Fuel
+stations are suffering with:**
 
 **1. Long and Cumbersome lines in front of fuel stations** :
 
@@ -32,15 +32,15 @@ customer experience better.
 
 ## Proposed Solution
 
-- We are proposing 2 products/services.
+#### We are proposing 2 products/services.
 
-1. A web-app
+1. **A web-app**
 
-2. A Microprocessor based hardware decice : This will perform two functions
+2. **A Microprocessor based hardware decice** : This will perform two functions
     
-1.) Automatic Number Plate Recognition(ANPR) : 
+- Automatic Number Plate Recognition(ANPR) : 
     
-2.) Time and Rush Estimate 
+- Time and Rush Estimate 
     
 
 ## Automatic Number Plate Recognition:
@@ -130,9 +130,9 @@ customer experience better.
  
 **NEED** 
 
-- For Client(Fuel stattion Owners) :
+**For Client(Fuel station Owners)** :
   
-- 1.) For collection of data and customer verification it is mandatory.
+- For collection of data and customer verification it is mandatory.
   
   
 ## HARDWARE 
