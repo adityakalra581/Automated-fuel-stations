@@ -1,5 +1,6 @@
-# Automated-fuel-stations
-Major Project
+# AUTOMATED FUEL STATION FOR OPTIMUM CUSTOMER EXPERIENCE
+
+Project Ideation 
 
 ## Problem Statements
 
@@ -35,42 +36,12 @@ customer experience better.
 
 1. A web-app
 
-2. A Microprocessor based hardware decice
-
-
-## How This Works ?
-
-![](images/block-webapp.png)
-
-
-**DATABASE and HARDWARE Communication**
-
-![](images/d-hcomm.png)
-
-
-
-**Web-App**
-
-![](images/home.png)
-
-This is the home page of our web app.
-
-
-**Registration Page**
-
-![](images/register-web.PNG)
-
-**Login Page**
-
-![](images/login-web.PNG)
-
-
-**Raspberry pi Hardware Device**
-
-
-![](images/circuit.jpeg)
-
-
+2. A Microprocessor based hardware decice : This will perform two functions
+    
+    1. Automatic Number Plate Recognition(ANPR) : 
+    
+    2. Time and Rush Estimate 
+    
 
 ## Automatic Number Plate Recognition:
 
@@ -90,6 +61,87 @@ This is the home page of our web app.
 **Block Diagram of Algorithm**
 
 ![](images/anpr-block.png)
+
+**Why we are Doing this ?**
+
+- The Answer is that : 1.) We need to create a customer database for better service.
+                       2.) Need to figure out the customer that are visiting a particular fuel station more frequently.
+                       3.) To solve the Under utilization and Over utilization problem 
+
+## Now let's see how the Whole Process Looks like:
+
+## 1. How This Works ?
+
+
+![](images/block-webapp.png)
+
+**EXPLANATION** 
+
+- The web page displayed here is a frontend GUI which will interact with User profiles(Which will be generated after a user created 
+  an account on the website
+  
+- The website also interacts with the multiple Admin pages(will be created for fuel station owners).
+
+- Hardware : Raspberry pi + Camera + Ultrasonic Sensors  
+
+- The data collected by the hardware device will be fetched and fed to the website which then directly displayed on the profiles of the   users.
+
+**DATABASE and HARDWARE Communication**
+
+![](images/d-hcomm.png)
+
+**EXPLANATION**
+
+- Database has the data of all the users and the fuel stations.
+
+- Once the ANPR is done we have a number plate text. This text is run through the Database and will try to find the number plate 
+  matches with this. Once a match is found the ehole data is sent to the Admin page of the fuel station from where the data has came.
+
+- SIMPLE!!
+
+## Now let's visit the Web Page:
+
+**Web-App**
+
+![](images/home.png)
+
+- This is the home page of our web app.
+
+- See carefully at the top right corner, there is a Login(For Existing Users) and Register(For new Users) options.
+
+
+**Registration Page[For New Users]**
+
+![](images/register-web.PNG)
+
+**Login Page**
+
+![](images/login-web.PNG)
+
+**Q. Why would anyone want to Register or Login?**
+
+- ANS: **Benefits** of Creating an Account:
+  
+  1. For Customers: 1.) Will receive real time data of how busy a particular fuel station is and how much time it will take to provide                           the service.[Hence solving problem number 1 of long lines]
+                    2.) Better service and customer experience as the service providers know there customer.
+ 
+**NEED** 
+
+  2. For Client(Fuel stattion Owners) : 1.) For collection of data and customer verification it is mandatory.
+  
+  
+## HARDWARE 
+
+**Raspberry Pi Integration**
+
+
+![](images/circuit.jpeg)
+
+- This is an old image, Raspberry Pi integrated with camera, Desktop, ethernet, keyboard, mouse.
+- The setup is for the testing of ANPR
+[There is push button integrated with the GPIO along with LED for controlling the camera with push button which is not included in the project]
+
+
 
 ### TASKS Segregation
 
