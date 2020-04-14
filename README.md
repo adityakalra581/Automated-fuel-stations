@@ -43,16 +43,35 @@ customer experience better.
 
 This is the home page of our web app.
 
-This here has a login and registrartion page.
+
+**Registration Page**
 
 ![](images/register-web.PNG)
 
-![](images/login-web.png)
+**Login Page**
+
+![](images/login-web.PNG)
 
 
 **Raspberry pi Hardware Device**
 
 ![](images/circuit.jpeg)
+
+
+
+## Automatic Number Plate Recognition:
+
+![](images/anpr.png)
+
+![](images/anpr2.jpg)
+
+![](images/anpr-block.png)
+
+
+
+
+
+
 
 
 
