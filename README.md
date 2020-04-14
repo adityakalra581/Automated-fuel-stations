@@ -61,9 +61,16 @@ This is the home page of our web app.
 
 ## Automatic Number Plate Recognition:
 
+
+**Basics of Number Plate Detection**
+
 ![](images/anpr.png)
 
+**How this will be executed at Fuel Station**
+
 ![](images/anpr2.jpg)
+
+**Block Diagram of Algorithm**
 
 ![](images/anpr-block.png)
 
