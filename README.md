@@ -71,7 +71,7 @@ customer experience better.
 
 ### Time and Rush Estimate
 
-![](images/time-estimate.PNG)
+![](images/time-estimate.png)
 
 
 
