@@ -68,6 +68,13 @@ customer experience better.
                        2.) Need to figure out the customer that are visiting a particular fuel station more frequently.
                        3.) To solve the Under utilization and Over utilization problem 
 
+
+### Time and Rush Estimate
+
+![](images/time-estimate.PNG)
+
+
+
 ## Now let's see how the Whole Process Looks like:
 
 ## 1. How This Works ?
