@@ -79,10 +79,10 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-@app.route("/account")
+@app.route("/profile")
 @login_required
-def account():
-    return render_template('account.html',title='Account')
+def profile():
+    return render_template('profile.html',title='Profile')
 
 ## @login_required will make sure that "/account" page will prompt the user to log in
 ## if already not logged in.

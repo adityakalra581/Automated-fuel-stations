@@ -24,6 +24,41 @@ User('aditya7', 'adityakalr56@yahoo.com', 'default.jpg')
 >>> user.password
 '$2b$12$3PuBetjrd5zaSdJIO3OEou5MzUpoCbfz0BQzDTiZE0B1RXxeC2KLq'
 >>> 
+********************************************************************************
+## Same process with Windows CMD:
+
+D:\GITHUB\Automated-fuel-stations\CODE>python
+Python 3.8.1 (tags/v3.8.1:1b293b6, Dec 18 2019, 23:11:46) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from flask_blog import db
+
+>>> from flask_blog.models import User
+>>> user = User.query.first()
+>>> user
+User('aditya7', 'adityakalr56@yahoo.com', 'default.jpg')
+>>> user.email
+'adityakalr56@yahoo.com'
+>>> h = User.query.all()
+>>> h
+[User('aditya7', 'adityakalr56@yahoo.com', 'default.jpg'), User('adityakalra581', 'adityakalra581@gmail.com', 'default.jpg')]
+
+>>> h[0]
+User('aditya7', 'adityakalr56@yahoo.com', 'default.jpg')
+
+>>> h[1]
+User('adityakalra581', 'adityakalra581@gmail.com', 'default.jpg')
+>>>
+
+*********************************************************************************
+
+
+
+
+
+
+
+
+
 **********************************************************************************************************************
 
 #### Username and email Validation:

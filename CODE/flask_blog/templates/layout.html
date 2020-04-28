@@ -33,12 +33,25 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
-                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('profile') }}">Profile</a>
                 <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
                 <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
               {% endif %}
+            </div>
+              <div class="dropdown">
+                <button class="dropbtn">Menu
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Paper</a>
+                  <a href="https://github.com/adityakalra581"target="_blank">Github</a>
+                  <a href="#">Contact</a>
+                  <a href="#">DOCS</a>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>

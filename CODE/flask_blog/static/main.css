@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: #85b7bb;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -78,3 +78,54 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+.dropdown {
+  float: right;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  /* font-size: 16px; */
+  border: none;
+  outline: none;
+  color: #85b7bb;
+  padding: 5px 5px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+ /* Important for vertical align on mobile phones */
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(68, 172, 20);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 20px 20px;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgb(68, 172, 20);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+ 
