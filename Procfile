@@ -1,1 +1,1 @@
-web: gunicorn Automated-fuel-stations.wsgi
+web: gunicorn CODE.wsgi
