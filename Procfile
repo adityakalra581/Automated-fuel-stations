@@ -1,1 +1,1 @@
-web: gunicorn Automated-fuel-stations\CODE:run
+web: gunicorn CODE:run
