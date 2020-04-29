@@ -1,1 +1,1 @@
-web: gunicorn flask_blog:app
+web: gunicorn Automated-fuel-stations/CODE/flask_blog:app
