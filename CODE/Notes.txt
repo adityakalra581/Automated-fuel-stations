@@ -149,3 +149,11 @@ Username: adityakalra581
 email: adityakalra581@gmail.com
 pwd: @DDy0987
 
+*******************************************************************
+## Deployement with Heroku:
+
+1. Database will be used is Postgress and not sqlite
+2. Requirements.txt is neccessary.(less the requirements the better)
+3. .gitgnore is prefered for decreasing the waste files.
+
+
