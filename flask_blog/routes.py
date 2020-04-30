@@ -21,12 +21,20 @@ from flask_login import login_user,current_user, logout_user, login_required
 
 @app.route('/')
 def home():
-    return render_template('home.html',title='HOME')
+    image = url_for('static', filename = 'images/')
+    return render_template('home.html',title='HOME',image=image)
 
 
 @app.route('/about')
 def about():
-	return render_template('about.html',title='about')
+    image = url_for('static',filename='images/')
+    return render_template('about.html',title='about',image=image)
+
+
+@app.route('/contact')
+def contact():
+    image = url_for('static',filename='images/')
+    return render_template('contact.html',title='contact',image=image)
 
 
 
@@ -45,7 +53,8 @@ def register():
         db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    image = url_for('static',filename='images/')
+    return render_template('register.html', title='Register', form=form,image=image)
 
 
 
@@ -67,10 +76,11 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
-            return redirect(next_page) if next_page else redirect(url_for('home'))
+            return redirect(next_page) if next_page else redirect(url_for('profile'))
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
-    return render_template('login.html', title='Login', form=form)
+    image = url_for('static',filename = 'images/')
+    return render_template('login.html', title='Login', form=form,image = image)
 
 
 ## After log in user should not see log in and register option again.
@@ -113,7 +123,8 @@ def profile():
         form.username.data = current_user.username
         form.email.data = current_user.email 
     image_file = url_for('static', filename = 'profile_pics/'+ current_user.image_file)
-    return render_template('profile.html',title='Profile',image_file=image_file,form = form )
+    image = url_for('static',filename = 'images/')
+    return render_template('profile.html',title='Profile',image_file=image_file,form = form,image=image)
 
 ## @login_required will make sure that "/account" page will prompt the user to log in
 ## if already not logged in.
