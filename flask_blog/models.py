@@ -1,6 +1,8 @@
-
-from flask_blog import db, login_manager
-from flask_login import UserMixin
+from flask import url_for, redirect 
+from flask_blog import db, login_manager, ad
+from flask_login import UserMixin, current_user
+from flask_admin.contrib.sqla import ModelView
+from flask_admin import Admin
 
 
 ## login_manager is a instance similar to db present inside our flask_blog : __init__ package.
@@ -25,6 +27,14 @@ class User(db.Model,UserMixin):
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+
+class MyModelView(ModelView):
+    def is_authorized(self):
+        return False
+            
+
+ad.add_view(MyModelView(User, db.session))
+
 
 
 

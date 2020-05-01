@@ -2,10 +2,11 @@ import secrets
 import os
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request
-from flask_blog import app, db, bcrypt
+from flask_blog import app, db, bcrypt,ad
 from flask_blog.forms import RegistrationForm, LoginForm, UpdateProfileForm
 from flask_blog.models import User
 from flask_login import login_user,current_user, logout_user, login_required
+from flask_admin.contrib.sqla import ModelView
 
 
 ## flask_blog is a directory inside which an __init__ file is present which will run every time whenever flask_blog is called
@@ -128,3 +129,16 @@ def profile():
 
 ## @login_required will make sure that "/account" page will prompt the user to log in
 ## if already not logged in.
+
+# @app.route("/admin")
+# def admin():
+#     if current_user.is_authenticated:
+#         ad.add_view(ModelView(User, db.session))
+#     else:
+#         flash('This page is not allowed to visit!','danger')
+#         return redirect(url_for('home'))       
+            
+
+
+
+# admin.add_view(ModelView(User, db.session))

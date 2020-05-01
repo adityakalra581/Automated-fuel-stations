@@ -2,7 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy      ## Setting a SQL based Database instance. 
 from flask_bcrypt import Bcrypt              ## For password hashing and authentication.
 from flask_login import LoginManager         ## Specifically for log in of User.
-
+from flask_admin import Admin
+# from flask_admin.contrib.sqla import ModelView
 
 
 app = Flask(__name__)
@@ -13,7 +14,19 @@ bcrypt = Bcrypt(app)                           # creating an instance for bcrypt
 login_manager = LoginManager(app)              # creating an instance for login_manager: ''
 login_manager.login_view = 'login'  
 login_manager.login_message_category = 'info'  ## for messages to be presented in stylish blue highlight.
-                                       
+
+
+
+# class MyModelView(ModelView):
+#     def is_authorized(self):
+#         return False
+            
+
+
+ad = Admin(app)
+# ad.add_view(MyModelView(User, db.session))
+
+
 
 from flask_blog import routes   
 ## Importing here just in order to avoid Circular Imports
