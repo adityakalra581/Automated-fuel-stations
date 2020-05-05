@@ -4,7 +4,7 @@ from PIL import Image
 from flask import render_template, url_for, flash, redirect, request
 from flask_blog import app, db, bcrypt,ad
 from flask_blog.forms import RegistrationForm, LoginForm, UpdateProfileForm
-from flask_blog.models import User
+from flask_blog.models import User, Fuel
 from flask_login import login_user,current_user, logout_user, login_required
 from flask_admin.contrib.sqla import ModelView
 
@@ -37,7 +37,25 @@ def contact():
     image = url_for('static',filename='images/')
     return render_template('contact.html',title='contact',image=image)
 
+@app.route('/stations')
+def stations():
+    image = url_for('static',filename='images/')
+    query=Fuel.query.all()
+    # if request.method == "GET":
 
+        # for i in query:
+            # return (i.name,i.address) 
+
+        # return render_template("stations.html", title='Fuel Stations', query=query,image=image)
+    return render_template('stations.html',title='Fuel Stations',query=query,image=image)
+
+
+# @app.route('/search/<y>',methods=['GET'])
+# def get_fuel(y):
+#     # y = Fuel.query.get(Fuel.name)
+#     y = Fuel.get_argument("y")
+#     return f"<h1>{str(y)}</h1>"
+    # return render_template('station.html', fuel = fuel) 
 
 ## methods essential for getting and posting of data.
 ## adding functionality requires it.

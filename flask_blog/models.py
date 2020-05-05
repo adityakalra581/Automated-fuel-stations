@@ -23,10 +23,30 @@ class User(db.Model,UserMixin):
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
     
-   
-
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+
+class Fuel(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(20))
+    address = db.Column(db.String(50))
+    state = db.Column(db.String(10))
+    
+    def __repr__(self):
+        return f"Fuel('{self.name}', '{self.address}', '{self.state}')"
+
+
+
+# class FuelSchema(ma.Schema):
+#     class Meta:
+#         fields = ('id','name','address','state')
+
+
+# fuel_schema = FuelSchema()  
+# fuels_schema = FuelSchema(many=True)
+
+
 
 class MyModelView(ModelView):
     def is_authorized(self):
@@ -34,6 +54,7 @@ class MyModelView(ModelView):
             
 
 ad.add_view(MyModelView(User, db.session))
+ad.add_view(ModelView(Fuel,db.session))
 
 
 
