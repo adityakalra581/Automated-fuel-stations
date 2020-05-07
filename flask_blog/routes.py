@@ -41,12 +41,6 @@ def contact():
 def stations():
     image = url_for('static',filename='images/')
     query=Fuel.query.all()
-    # if request.method == "GET":
-
-        # for i in query:
-            # return (i.name,i.address) 
-
-        # return render_template("stations.html", title='Fuel Stations', query=query,image=image)
     return render_template('stations.html',title='Fuel Stations',query=query,image=image)
 
 
@@ -59,6 +53,8 @@ def stations():
 
 ## methods essential for getting and posting of data.
 ## adding functionality requires it.
+
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():

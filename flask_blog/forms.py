@@ -70,3 +70,9 @@ class UpdateProfileForm(FlaskForm):
                 raise ValidationError('That email is taken. Please choose a different one.')
 
 
+
+
+# forms.py
+
+# from wtforms import Form, StringField, SelectField
+
