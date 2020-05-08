@@ -22,7 +22,7 @@ class RegistrationForm(FlaskForm):
 
 ## These methods are present for making a new registration with Unique username and Email.
 ## Both the methods will check whether the email and username already Exists in the database or not.
-## IF true will raise an Validation error.
+## If true will raise an Validation error.
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()

@@ -37,20 +37,11 @@
               {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link" href="{{ url_for('profile') }}">Profile</a>
                 <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
-              {% else %}
-            </div>  
-            <div class="dropdown">
-              <button class="dropbtn">Login
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">User Login</a>
-                <a class="nav-item nav-link" href="#">Admin Login</a>
-              </div>
-            </div>  
-                <!-- <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a> -->
-                <!-- <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a> -->
-              <div class="dropdown">
+              {% else %}  
+                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a> 
+                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+            </div>
+              <!-- <div class="dropdown">
                 <button class="dropbtn">Register
                   <i class="fa fa-caret-down"></i>
                 </button>
@@ -58,7 +49,7 @@
                 <a class="nav-item nav-link" href="{{ url_for('register') }}">User Register</a>
                 <a class="nav-item nav-link" href="#">Admin Register</a>
               </div>
-            </div>  
+            </div>   -->
               {% endif %}
             </div>
               <div class="dropdown">
@@ -69,7 +60,7 @@
                   <a href="#">Paper</a>
                   <a href="https://github.com/adityakalra581"target="_blank">Github</a>
                   <a href="{{ url_for('contact') }}">Contact</a>
-                  <a href="#">DOCS</a>
+                  <a href="https://adityakalra581.github.io/Automated-fuel-stations/" target = "_blank">DOCS</a>
                 </div>
               </div>
               
