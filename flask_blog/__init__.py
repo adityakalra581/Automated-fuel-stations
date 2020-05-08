@@ -36,3 +36,9 @@ from flask_blog import routes
 ## Importing here just in order to avoid Circular Imports
 ## Routes are importing modules from flask_blog and if __init__ will also import routes in the beginni
 ## This will go on forever and the code will not run.
+
+
+## For Error handling.
+
+from flask_blog.errors.handlers import errors
+app.register_blueprint(errors)
