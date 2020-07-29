@@ -1,4 +1,6 @@
-# AUTOMATED FUEL STATION FOR OPTIMUM CUSTOMER EXPERIENCE
+# [AUTOMATED FUEL STATION FOR OPTIMUM CUSTOMER EXPERIENCE](https://quickfuel.herokuapp.com/)
+
+### Deployed App Address: [Quickfuel](https://quickfuel.herokuapp.com/)
 
 Project Ideation 
 
@@ -163,33 +165,6 @@ customer experience better.
 [There is push button integrated with the GPIO along with LED for controlling the camera with push button which is not included in the project]
 
 
-
-### TASKS Segregation
-
-#### Tasks Completed:
-
-1. Website : Home,About,Login,Registration pages completed. Database is created, integration of database with website is done.
-             Authentication is also completed i.e no spam or fraudulent email will be accepted, passwords will be hased when sent to the              database.
-             
-2. Hardware : Setup is complete, Raspberry pi is running, camera is capturing image and live stream is recorded and displayed.
-
-3. Automatic Number Plate Recognition : Completed and tested. The algorithm is working with high accuracy.
-
-4. Time and Rush Estimation : Code is completed.
-
-#### Pending Tasks:
-
-1. Website : Profile page of user,Admin page for client and deployment of website.
-
-2. Time and Rush Estimation : Code deployment and Testing.
-
-
-
-
-
-
-
-
-
+**NOTE:** This repository does not contain the raspberry pi code right now, the only code available here is of the webapp.
 
 ************************************************************************
