@@ -1,67 +1,85 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>WELCOME</h1>
-<br>
-<div class="media">
-    <img class="content-img" src="{{ image }}/logo.jpeg">
-</div>
-<br>
-<br>
-<h3>Getting Started:</h3>    
-<p>
-    This website deal is created to rectify the issues faced by the 
-    Indian population and fuel station owners.</p>    
-<h3>How to maximise benefits:</h3> 
-<br>  
-    <section id="two">
-        <div class="inner">
-            <header class="major">
-                <h3>The Customers:</h3>
-            </header>
-            <br>
-            <b>Step 1:</b> Register with your details 
-            <br>
-            <br>
-            <b>Step 2:</b> Log in with your email and password
-            <br>
-            <br>
-            <b>Step 3:</b> See the real-time data of fuel stations rush and average waiting time.
-            <br>
-            <br>
-            <b>Step 4:</b> On special query, you can see the real-time images of the fuel station which are updated every 30 minutes.[beta]
-            <br>
-            <br>
-            <!-- <ul class="actions">
-                <li><a href="about.html" class="button next">Next Page</a></li>
-            </ul> -->
-        </div>
-    </section>
-    <section id="two">
-        <div class="inner">
-            <header class="major">
-                <h3>The Fuel Station Owners:</h3>
-            </header>
-            <br>
-            <b>Step 1:</b> Deploy our special cameras in your stations
-            <br>
-            <br>
-            <b>Step 2:</b> Register with us 
-            <br>
-            <br>
-            <b>Step 3:</b> Know your customers and enhance your customer relations
-            <br>
-            <br>
-            <b>Step 4:</b> Increase revenue and sort the chaos 
-            <br>
-            <br>
-            <!-- <ul class="actions">
-                <li><a href="about.html" class="button next">Next Page</a></li>
-            </ul> -->
-        </div>
-    </section>
-    <div class="media">
-        <img class="content-img" src="{{ image }}/cam.jpg">
-    </div>
+<!-- <img class="img-fluid w-100" src="{{ image }}/hero-homepage.png"> -->
 
+<section class="section-1 py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" src="{{ image }}/anpr2.jpg">
+            </div>
+            <div class="col-md-8">
+                <p class="py-sm-3 mt-sm-3 lead">
+                    <span class="blue">Quick</span><span class="yellow">Fuel</span>
+                    is a smart regulator to be fitted on LPG cylinder
+                    which allows users to pay and use LPG gas in small portions.
+                    You can recharge gas cylinder for small amount instead of
+                    paying for the entire cylinder upfront and can keep a track of
+                    gas available in the cylinder. The device will also initiate
+                    automatic booking with your permission.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-2 bg-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" src="{{ image }}/anpr.png">
+            </div>
+            <div class="col-md-8">
+                <h2 class="display-4 blue mt-sm-5">
+                    Real Time Updates of Fuel Stations <br /> 
+                </h2>
+                <p class="h2 yellow">Plan your visits from home</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-1 py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" src="{{ image }}/anpr-solution2.png">
+            </div>
+            <div class="col-md-8 text-center">
+                <div class="row my-sm-5">
+                    <div class="col-sm-6">
+                        <div class="features card p-2 shadow-sm border-0 mb-3 mb-sm-0">
+                            <img class="img-fluid mx-auto my-3" src="{{ image }}/1.live-data.png">
+                            <p class="caption">Live Data
+                                Monitoring</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="features card p-2 shadow-sm border-0 mb-3 mb-sm-0">
+                            <img class="img-fluid mx-auto my-3" src="{{ image }}/2.detect-leakage.png">
+                            <p class="caption">Detect Leakage</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="features card p-2 shadow-sm border-0 mb-3 mb-sm-0">
+                            <img class="img-fluid mx-auto my-3" src="{{ image }}/3.interlinked-network.png">
+                            <p class="caption">Interlinked
+                                Network</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="features card p-2 shadow-sm border-0 mb-3 mb-sm-0">
+                            <img class="img-fluid mx-auto my-3" src="{{ image }}/4.business-and-finance.png">
+                            <p class="caption">Monitor your
+                                consumption</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}

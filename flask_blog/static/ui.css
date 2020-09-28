@@ -1,0 +1,56 @@
+.debug {
+    border: 1px dashed red;
+}
+body {
+    background-color: #f7f7f7;
+}
+
+.navbar-light .navbar-brand {
+    max-width: 160px;
+}
+
+.header-additional-icon {
+    max-width: 60px;
+}
+.blue, .caption {
+    color: #2274E1;
+}
+.yellow {
+    /* color: #FFDE59; */
+    color: #ffc107;
+}
+.profile {
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+}
+.profile-info img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.section-1 span,
+.caption {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+.features.card img {
+    max-width: 100px;
+    /* height: 100px; */
+}
+
+.footer-links li {
+    display: inline-block;
+}
+.footer-links li+li {
+    margin-left: 1rem;
+}
+.footer-links a {
+    font-weight: 600;
+}
+
+.error-page.container {
+    padding: 0 15px;
+    height: 60vh;
+}

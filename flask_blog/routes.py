@@ -37,11 +37,6 @@ def contact():
     image = url_for('static',filename='images/')
     return render_template('contact.html',title='contact',image=image)
 
-@app.route('/stations')
-def stations():
-    image = url_for('static',filename='images/')
-    query=Fuel.query.all()
-    return render_template('stations.html',title='Fuel Stations',query=query,image=image)
 
 
 # @app.route('/search/<y>',methods=['GET'])

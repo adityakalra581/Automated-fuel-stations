@@ -1,0 +1,60 @@
+.bg-transparent {
+    background-color: transparent;
+}
+.border-0 {
+    border: none;
+}
+.fs-title {
+    font-size: 2.6rem
+}
+
+.text-right {
+    text-align: right
+}
+.text-white,
+.box-info,
+.box-danger,
+.box-pollock,
+.box-primary,
+.box-sunset,
+.box-soda {
+    color: #fff;
+}
+.box-info {
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+.box-danger {
+    background-color: #ff4e00;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+}
+.box-pollock {
+    background-color: #6b0f1a;
+    background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+
+}
+.box-primary {
+    background-color: #9921e8;
+    background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
+}
+.box-sunset {
+    background-color: #fc5296;
+    background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
+}
+.box-soda {
+    background-color: #3bb78f;
+background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+.card-stats {
+    font-size: 13px;
+}
+.stats .title {
+    font-size: 3.8rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+/* override style */
+.stats .badge {
+    font-size: 2.8rem;
+    background-color: #00000036;
+}

@@ -6,116 +6,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}">
 
     {% if title %}
         <title>QuickFuel - {{ title }}</title>
     {% else %}
         <title>QuickFuel</title>
     {% endif %}
+    <script>
+      window.onload = function () {
+
+      //Better to construct options first and then pass it as a parameter
+      var options = {
+        animationEnabled: true,
+        // title:{
+        //   text: "Cylinder Status"
+        // },
+        axisY:{
+          title:"Weight (Kg)"
+        },
+        toolTip: {
+          shared: true,
+          reversed: true,
+          // backgroundColor: "#16acff",
+
+        },
+        data: [{
+          type: "stackedColumn",
+          name: "Cylinder Filled",
+          showInLegend: "true",
+          yValueFormatString: "#,##0Kg",
+          dataPoints: [
+            { y: 18 , label: "Filled" },
+          ]
+        },
+        {
+          type: "stackedColumn",
+          color: '#f72710',
+          name: "Cylinder Empty",
+          showInLegend: "true",
+          yValueFormatString: "#,##0Kg",
+          dataPoints: [
+            { y: 8 , label: "Empty" },
+          ]
+        }]
+      };
+
+      $("#chartContainer").CanvasJSChart(options);
+      }
+      </script>
 </head>
 <body>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <div class="container">
-          <a class="navbar-brand mr-4" href="/">QuickFuel</a>
-          <div class="media">
-        </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
-              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
-              <a class="nav-item nav-link" href="{{ url_for('stations') }}">Fuel Stations</a>
-            </div>
+  <nav class="navbar navbar-light navbar-expand-md bg-white w-100">
+    <div class="container">
+      <a class="navbar-brand mr-4" href="/">
+        <!-- <img src="{{ image }}/logo.png" class="img-fluid"> -->
+      </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+            <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+            <a data-toggle="tooltip" data-placement="right" title="Coming soon" class="nav-item nav-link" href="#!">Get App</a>
+          </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
-                <a class="nav-item nav-link" href="{{ url_for('profile') }}">Profile</a>
-                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
-              {% else %}  
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a> 
-                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              <a class="nav-item nav-link" href="{{ url_for('profile') }}">Profile</a>
+              <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                  {% if current_user.is_admin %}
+                      <a class="nav-item nav-link" href="{{ url_for('admin_1') }}">Admin Page</a>
+                  {% endif %}
+              {% else %}
+              <a class="mr-sm-2 mb-1 mb-sm-0 nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+              <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
             </div>
-              <!-- <div class="dropdown">
-                <button class="dropbtn">Register
-                  <i class="fa fa-caret-down"></i>
-                </button>
-              <div class="dropdown-content">
-                <a class="nav-item nav-link" href="{{ url_for('register') }}">User Register</a>
-                <a class="nav-item nav-link" href="#">Admin Register</a>
-              </div>
-            </div>   -->
-              {% endif %}
-            </div>
-              <div class="dropdown">
-                <button class="dropbtn">Menu
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Paper</a>
-                  <a href="https://github.com/adityakalra581"target="_blank">Github</a>
-                  <a href="{{ url_for('contact') }}">Contact</a>
-                  <a href="https://adityakalra581.github.io/Automated-fuel-stations/" target = "_blank">DOCS</a>
-                </div>
-              </div>
-              
+            {% endif %}
+          </div>
+          <br>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a>
+              <a class="dropdown-item" href="https://github.com/adityakalra581">Github</a>
+              <a class="dropdown-item" href="https://adityakalra581.github.io/Automated-fuel-stations/">Docs</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Paper</a>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
-          {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>PROJECT</h3>
-            <p class='text-muted'>GROUP MEMBERS.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">ADITYA KALRA</li>
-                <li class="list-group-item list-group-item-light">JAIDEEP PURI</li>
-                <li class="list-group-item list-group-item-light">JYOTI BHOLLA</li>
-                <li class="list-group-item list-group-item-light">AGNIV BISWAS</li>
-              </ul>
-            </p>
+          <div class="header-additional-icon d-none d-sm-block">
+            <img src="{{ image }}/Bharat_Petroleum-Logo.png" class="img-fluid">
           </div>
         </div>
       </div>
+    </div>
+  </nav>
+
+    <main role="main">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
     </main>
-    <div class="contact">
-      <h2></h2>
-      <div class="media">
-        <img class="content-img" src="{{ image }}/logo1.jpeg">
+
+    <!-- Footer section -->
+    <hr class="divider">
+    <div class="container-fluid p-3 text-center p-md-5">
+      <ul class="footer-links pl-0">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+      </ul>
+      <!-- <p>Designed and built by <a href="https://morphedo.com/">Morphedo Technologies Pvt. Ltd</a>.</p> -->
     </div>
-      <p>QuickFuel is created as part of the Capstone project. 
-        This website here is created for educational purposes only 
-        and not for production.<br>
-        This site is created and maintained 
-        by <a href="https://adityakalra581.github.io/ak/">Aditya Kalra.</a></p>
-    </div>
-   
+
 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
 </body>
 </html>
