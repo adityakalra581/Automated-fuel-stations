@@ -1,3 +1,4 @@
+import os
 from flask import Flask,jsonify
 from flask_sqlalchemy import SQLAlchemy      ## Setting a SQL based Database instance. 
 from flask_bcrypt import Bcrypt              ## For password hashing and authentication.
@@ -8,10 +9,22 @@ from flask_admin import Admin
 # from flask_admin.contrib.sqla import ModelView
 
 
+
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+
+## Development:
+
+# app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+
+## Deployment
+
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
 
 db = SQLAlchemy(app)                           # creating an instance for db: from now db will be mentioned wherever SQLAlchemy is required
 bcrypt = Bcrypt(app)                           # creating an instance for bcrypt : ''
