@@ -136,6 +136,12 @@ def profile():
     image = url_for('static',filename = 'images/')
     return render_template('profile.html',title='Profile',image_file=image_file,form = form,image=image)
 
+
+@app.route("/credit")
+def credit():
+    image = url_for('static', filename = 'images/')
+    return render_template('credits.html',title='Credits',image=image)
+
 ## @login_required will make sure that "/account" page will prompt the user to log in
 ## if already not logged in.
 
