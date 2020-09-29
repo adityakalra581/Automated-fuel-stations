@@ -23,89 +23,57 @@
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="right" title="In Kilograms">
                             Station Name
-                        <span class="badge badge-primary badge-pill">{{ current_user.consumption }}</span>
+                        <span class="badge badge-primary badge-pill">None</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="right" title="In Kilograms">
                             Fuel Amount
-                        <span class="badge badge-primary badge-pill">{{ current_user.initial_volume }}</span>
+                        <span class="badge badge-primary badge-pill">None</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="right" title="In Kilograms">
                             Fuel Price
-                        <span class="badge badge-primary badge-pill">{{ current_user.final_volume }}</span>
+                        <span class="badge badge-primary badge-pill">None</span>
                         </li>
                         <!-- <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="right" title="In INR">
                             
                         <span class="badge badge-primary badge-pill">{{ current_user.recharge }}</span>
                         </li> -->
                     </ul>
+                    <div class="row my-sm-5">
+                        <div class="col-sm-6">
+                            <div class="features card p-2 shadow-sm border-0 mb-3 mb-sm-0">
+                                <img class="img-fluid mx-auto my-3" src="{{ image }}/cng1.jpg">
+                                <p class="caption2">Punjabi Bagh West CNG Station<br>
+                                    Average Waiting Time: 25 Minutes</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="features card p-2 shadow-sm border-0 mb-3 mb-sm-0">
+                                <img class="img-fluid mx-auto my-3" src="{{ image }}/west-punjabibagh1.jpg">
+                                <p class="caption">Rohini Sec-15 CNG Station<br>
+                                    Average Waiting Time: 15 Minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="features card p-2 shadow-sm border-0 mb-3 mb-sm-0">
+                                <img class="img-fluid mx-auto my-3" src="{{ image }}/auto-care-centre-pitampura-pitampura-delhi-petrol-pumps.jpg">
+                                <p class="caption">Auto care centre pitampura<br>
+                                    Average Waiting Time: 25 Minutes</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="features card p-2 shadow-sm border-0 mb-3 mb-sm-0">
+                                <img class="img-fluid mx-auto my-3" src="{{ image }}/fuel2.jpg">
+                                <p class="caption2">Naman care centre Rohini<br>
+                                    Average Waiting Time: 20 Minutes</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <br/>
             </div>
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="h1">Update Profile</h2>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="" enctype="multipart/form-data">
-                            <!-- enctype here is specifically used for passing image correctly -->
-                            {{ form.hidden_tag() }}
-                            <div class="form-group">
-                                {{ form.username.label(class="form-control-label") }}
-
-                                {% if form.username.errors %}
-                                    {{ form.username(class="form-control form-control-lg is-invalid") }}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.username.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{ form.username(class="form-control form-control-lg") }}
-                                {% endif %}
-                            </div>
-                            <div class="form-group">
-                                {{ form.email.label(class="form-control-label") }}
-                                {% if form.email.errors %}
-                                    {{ form.email(class="form-control form-control-lg is-invalid") }}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.email.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{ form.email(class="form-control form-control-lg") }}
-                                {% endif %}
-                            </div>
-                            <div class="form-group">
-                                {{ form.picture.label() }}
-                                {{ form.picture(class="form-control-file") }}
-                                {% if form.picture.errors %}
-                                    {% for error in form.picture.errors %}
-                                        <span class="text-danger">{{ error }}</span></br>
-                                    {% endfor %}
-                                {% endif %}
-                            </div>
-                            <div class="form-group text-right">
-                                {{ form.submit(class="btn btn-primary") }}
-                            </div>
-                        </form>
-                    </div>
                     <!-- <div class="card-footer"></div> -->
-                </div>
-            </div>
         </div>
     </div>
-
-    <!-- <dl>
-        <dt>
-          Average Waiting Time
-        </dt>
-        <dd class="percentage percentage-11"><span class="text">Fuel or Diesel</span></dd>
-        <dd class="percentage percentage-49"><span class="text">CNG</span></dd>
-        <dd class="percentage percentage-16"><span class="text">Firefox: 16.09%</span></dd>
-        <dd class="percentage percentage-5"><span class="text">Safari: 5.41%</span></dd>
-        <dd class="percentage percentage-2"><span class="text">Opera: 1.62%</span></dd>
-        <dd class="percentage percentage-2"><span class="text">Android 4.4: 2%</span></dd>
-      </dl> -->
 {% endblock content %}

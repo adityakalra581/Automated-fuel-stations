@@ -21,7 +21,7 @@ body {
 }
 .green {
     /* color: #FFDE59; */
-    color: #1ebd0f;
+    color: #20d410;
 }
 .profile {
     max-width: 300px;
@@ -36,8 +36,15 @@ body {
 .section-1 span,
 .caption {
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     letter-spacing: 1px;
+    color: #e9db15;
+}
+.caption2 {
+    font-weight: 800;
+    font-size: 1.0rem;
+    letter-spacing: 1px;
+    color: #29a833;
 }
 .features.card img {
     max-width: 100px;
