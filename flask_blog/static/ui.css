@@ -19,6 +19,10 @@ body {
     /* color: #FFDE59; */
     color: #ffc107;
 }
+.green {
+    /* color: #FFDE59; */
+    color: #1ebd0f;
+}
 .profile {
     max-width: 300px;
     max-height: 300px;
